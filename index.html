@@ -1,199 +1,317 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gustavo Machado | Portfólio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div id="tsparticles"></div>
 
-  <section class="encima">
-    <canvas id="binario-fundo-section"></canvas>
+  <!-- Fundo Animado -->
+  <canvas id="binarioCanvas"></canvas>
 
-    <h1 class="typing" id="digitando">Olá, eu sou o Gustavo Machado</h1>
+  <!-- Cabeçalho Hero -->
+  <header class="cabecalho">
+    <h1 class="logo">Gustavo Machado</h1>
+    <nav class="navegacao">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#senai">SENAI</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- Main com Scroll Snap -->
+  
+<main class="container-scroll"></main>
+    <!-- Seção Hero -->
+    <section class="secao encima" id="inicio">
+  <div class="conteudo-hero">
+    <h1 class="typing" id="digitando"></h1>
     <div class="icones-sociais">
-      <a href="https://www.linkedin.com/in/gustavo-machado-49379734a/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/seuperfil"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <img src="img/linkedin branco.webp" alt="LinkedIn Gustavo Machado" />
       </a>
-      <a href="https://github.com/gustavo-machado264" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/seunome"  target="_blank" rel="noopener noreferrer" aria-label="GitHub">
         <img src="img/git.png" alt="GitHub Gustavo Machado" />
       </a>
-    </div>
-  </section>
-
-  <section class="screen screen1">
-  <div class="perfil">
-    <img src="img/eu.png" alt="Foto de Gustavo Machado" loading="lazy" />
-    <div class="texto">
-      <h2>Dev Full Stack em formação <span>| SENAI Morvan Figueiredo</span></h2>
-      <p>
-        Olá! Eu sou <strong>Gustavo Machado</strong>. Apaixonado por tecnologia, design e interatividade,
-        estou construindo meu caminho na programação com projetos que combinam criatividade, lógica e experiência do usuário.
-        <br><br>
-        Aqui, você vai conhecer minha trajetória, meus aprendizados e os projetos que desenvolvi até agora — desde sites
-        completos até protótipos no Figma e animações interativas.
-        <br><br>
-        <span class="destaque">Meu objetivo?</span> Criar interfaces que não só funcionem, mas que também surpreendam e encantem.
-      </p>
     </div>
   </div>
 </section>
 
+    <!-- Sobre Mim -->
+    <section class="secao perfil" id="sobre">
+      <div class="screen1">
+        <img src="img/eu 2.png" alt="Foto de Gustavo Machado" loading="lazy" />
+        <div class="texto">
+          <h2>Dev Full Stack em formação <span>| SENAI Morvan Figueiredo</span></h2>
+          <p>
+            Olá! Eu sou <strong>Gustavo Machado</strong>. Apaixonado por tecnologia, design e interatividade...
+            <br><br>
+            Aqui, você vai conhecer minha trajetória, meus aprendizados e os projetos que desenvolvi até agora — desde sites completos até protótipos no Figma e animações interativas.
+            <br><br>
+            <span class="destaque">Meu objetivo?</span> Criar interfaces que não só funcionem, mas que também surpreendam e encantem.
+          </p>
+        </div>
+      </div>
+    </section>
 
-
-  <section class="inicio">
+    <!-- O que aprendi no SENAI -->
+<section class="secao senai" id="senai">
+  <div class="card-secao">
     <h2>O que aprendi no SENAI</h2>
     <p>
-      <strong>Durante minha formação no SENAI Morvan Figueiredo,</strong> tive a oportunidade de desenvolver
-      <strong>habilidades sólidas em desenvolvimento web, design de interface e prototipação de projetos
-        digitais.</strong>
-      Os projetos sempre tiveram como foco a <strong>qualidade técnica, criatividade e experiência do
-        usuário,</strong>
-      unindo teoria e prática de forma estratégica.
+      Durante minha formação no SENAI Morvan Figueiredo, tive a oportunidade de desenvolver habilidades sólidas em desenvolvimento web, design de interface e prototipação de projetos digitais.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section class="computadores">
+    <!-- Conhecendo Computadores -->
+<section class="secao computadores" id="computadores">
+  <div class="card-secao">
     <h2>Início da Jornada: Conhecendo os Computadores</h2>
     <p>
-      No começo do curso no SENAI, aprendi sobre <strong>hardware e software,</strong> entendendo os componentes
-      internos dos computadores e como eles funcionam juntos. Também aprendi a <strong>formatar e montar PCs,</strong>
-      o
-      que me deu uma base sólida para seguir no mundo da tecnologia.
+      No começo do curso no SENAI, aprendi sobre <strong>hardware e software,</strong> entendendo os componentes internos dos computadores e como eles funcionam juntos.
     </p>
-    <img src="img/pc.png" alt="Imagem de computador" loading="lazy" />
-    <img src="img/pc 2.png" alt="Imagem de computador" loading="lazy" />
-    <a href="https://www.canva.com/design/DAGo8HNr0BY/9y1RgSQYC1C2XrpcWoSm3Q/view" class="botao" target="_blank"
-      rel="noopener noreferrer">Acessar 1</a>
-    <a href="https://www.canva.com/design/DAGebQ7tu0s/GEOE5WbhyhQhhE-Ah6GfRA/view" class="botao" target="_blank"
-      rel="noopener noreferrer">Acessar 2</a>
-  </section>
 
-  <section class="sistemas">
+    <!-- Container de imagens com botões abaixo -->
+    <div class="imagens-com-botoes">
+      <!-- Bloco 1 -->
+      <div class="imagem-botao">
+        <img src="img/pc.png" alt="Imagem de computador" loading="lazy" />
+        <a href="#" class="botao">Acessar 1</a>
+      </div>
+
+      <!-- Bloco 2 -->
+      <div class="imagem-botao">
+        <img src="img/pc 2.png" alt="Imagem de computador" loading="lazy" />
+        <a href="#" class="botao">Acessar 2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- Sistemas Operacionais -->
+<section class="secao sistemas" id="sistemas">
+  <div class="card-secao card-secao-sistemas">
     <h2>Sistemas Operacionais</h2>
     <p>
-      Aprendi a usar e diferenciar sistemas como <strong>Windows e Linux,</strong> entendendo suas funções, estrutura
-      e
-      comandos básicos. Conheci o terminal, naveguei por diretórios e aprendi a instalar e configurar programas, o que
-      reforçou meu entendimento sobre como o sistema controla o computador.
+      Aprendi a usar e diferenciar sistemas como Windows e Linux, entendendo suas funções, estrutura e comandos básicos.
     </p>
-    <img src="img/ubunto.png" alt="Logo do Ubuntu Linux" loading="lazy" />
-    <img src="img/windows-11-4.webp" alt="Logo do Windows 11" loading="lazy" />
-  </section>
 
-  <section class="metodo">
+    <!-- Imagens lado a lado -->
+    <div class="imagens-sistemas">
+      <img src="img/ubunto.png" alt="Logo do Ubuntu Linux" loading="lazy" />
+      <img src="img/windows-11-4.webp" alt="Logo do Windows 11" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+   <!-- Metodologias Ágeis -->
+<section class="secao metodo" id="metodo">
+  <div class="card-secao">
     <h2>Metodologias Ágeis</h2>
     <p>
-      Durante o curso, tive contato com as <strong>metodologias ágeis,</strong> como <strong>Scrum</strong> e
-      <strong>Kanban,</strong> entendendo seus papéis, rituais e ferramentas. Aprendi a dividir tarefas em etapas
-      menores, definir prioridades e manter comunicação constante. Isso melhorou o trabalho em grupo, cumprimento de
-      prazos e o desempenho nos projetos.
+      Durante o curso, tive contato com as metodologias ágeis, como Scrum e Kanban, entendendo seus papéis, rituais e ferramentas.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section class="arquetipos">
+   <!-- Arquétipos de Marca -->
+<section class="secao arquetipos" id="arquetipos">
+  <div class="card-secao">
     <h2>Arquétipos de Marca</h2>
     <p>
-      <strong>Estudei os arquétipos de marca</strong> e compreendi como eles ajudam a construir a personalidade de um
-      projeto. Entre os que mais combinam comigo, estão:
+      Estudei os arquétipos de marca e compreendi como eles ajudam a construir a personalidade de um projeto.
     </p>
-    <img src="img/esplorador.png" alt="Símbolo do arquétipo Explorador" loading="lazy" />
-    <p><strong>Explorador:</strong> representa curiosidade, experimentação e tecnologia.</p>
-    <img src="img/criativo.png" alt="Símbolo do arquétipo Criador" loading="lazy" />
-    <p><strong>Criador:</strong> voltado para inovação, ideias únicas e criatividade.</p>
-  </section>
 
-  <section class="Design">
+    <!-- Imagens lado a lado com texto ao lado -->
+    <div class="imagens-arquetipos">
+      <div>
+        <img src="img/esplorador.png" alt="Símbolo do arquétipo Explorador" loading="lazy" />
+        <p><strong>Explorador:</strong> representa curiosidade, experimentação e tecnologia.</p>
+      </div>
+
+      <div>
+        <img src="img/criativo.png" alt="Símbolo do arquétipo Criador" loading="lazy" />
+        <p><strong>Criador:</strong> voltado para inovação, ideias únicas e criatividade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- UI/UX Design -->
+<section class="secao design" id="design">
+  <div class="card-secao">
     <h2>UI/UX Design: criando interfaces com propósito</h2>
-    <img src="img/futuro.png" alt="Design UI" loading="lazy" />
-    <p>
-      Aprendi a importância de unir <strong>design visual (UI)</strong> com <strong>experiência do usuário
-        (UX)</strong>. Criei interfaces funcionais, acessíveis e intuitivas.
-    </p>
-    <img src="img/programa.png" alt="Design UX" loading="lazy" />
-    <ul>
-      <li>Hierarquia visual</li>
-      <li>Espaçamento e alinhamento</li>
-      <li>Feedback visual</li>
-      <li>Design responsivo e acessível</li>
-    </ul>
-  </section>
 
-  <section class="prototipo">
+    <!-- Imagem + texto lado a lado -->
+    <div class="imagens-design">
+      <div class="design-item">
+        <img src="img/futuro.png" alt="Design UI" loading="lazy" />
+        <p>
+          Aprendi a importância de unir <strong>design visual (UI)</strong> com <strong>experiência do usuário (UX)</strong>. Criei interfaces funcionais, acessíveis e intuitivas.
+        </p>
+      </div>
+
+      <div class="design-item">
+        <img src="img/programa.png" alt="Design UX" loading="lazy" />
+        <ul>
+          <li>Hierarquia visual</li>
+          <li>Espaçamento e alinhamento</li>
+          <li>Feedback visual</li>
+          <li>Design responsivo e acessível</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <!-- Prototipagem -->
+<section class="secao prototipo" id="prototipo">
+  <div class="card-secao">
     <h2>Prototipagem</h2>
-    <p>Aprendi sobre <strong>prototipagem com o Figma,</strong> transformando ideias em projetos organizados. Conheci
-      os
-      níveis de fidelidade:</p>
-    <img src="img/baixa fidelidade.jpg" alt="Protótipo baixa fidelidade" loading="lazy" />
-    <p><strong>Baixa:</strong> esboços simples.</p>
-    <img src="img/media.png" alt="Protótipo média fidelidade" loading="lazy" />
-    <p><strong>Média:</strong> protótipos com fluxos definidos.</p>
-    <img src="img/alta.png" alt="Protótipo alta fidelidade" loading="lazy" />
-    <p><strong>Alta:</strong> projeto quase final, pronto para apresentar.</p>
-  </section>
+    <p>Aprendi sobre prototipagem com o Figma, transformando ideias em projetos organizados.</p>
 
-  <section class="figma">
-    <h2>Projetos Figma desenvolvidos</h2>
-    <img src="img/f1.png" alt="Projeto Figma 1" loading="lazy" />
-    <a href="https://www.figma.com/proto/STQeHmqbiFpU8zFFfSzuuk/Atividade-1?node-id=0-1" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver projeto</a>
-    <img src="img/f2.png" alt="Projeto Figma 2" loading="lazy" />
-    <a href="https://www.figma.com/proto/GtXPQFPyEbSWb4XDYT3lmI/Atividade-2" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver projeto</a>
-    <img src="img/f3.png" alt="Projeto Figma 3" loading="lazy" />
-    <a href="https://www.figma.com/proto/EpcDpFYZRk96g03hrAF3PC/Prot%C3%B3tipo-BeatFLow?node-id=0-1" class="botao"
-      target="_blank" rel="noopener noreferrer">Ver projeto</a>
-    <img src="img/f4.png" alt="Projeto Figma 4" loading="lazy" />
-    <a href="https://www.figma.com/proto/lXkU9AwI4oTcVhMsjeBfzL/Atividade-3?node-id=0-1" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver projeto</a>
-  </section>
+    <!-- Container dos blocos de protótipo -->
+    <div class="prototipos-container">
 
-  <section class="programa">
-    <h2>HTML e CSS — O Início na Programação</h2>
-    <p>
-      De 9 de abril a 30 de maio, mergulhei no <strong>HTML e CSS.</strong> Aprendi a criar páginas completas e
-      estilos
-      modernos com Flexbox, Grid, responsividade e acessibilidade. Foi nesse momento que nasceu minha paixão pelo
-      desenvolvimento.
-    </p>
-  </section>
+      <!-- Item 1 - Baixa fidelidade -->
+      <div class="prototipo-item-esquerda">
+        <img src="img/baixa fidelidade.jpg" alt="Protótipo baixa fidelidade" loading="lazy" />
+        <div class="descricao">
+          <p><strong>Baixa:</strong> esboços simples.</p>
+        </div>
+      </div>
 
-  <section class="projeto">
-    <h2>Sites desenvolvidos durante o curso</h2>
-    <img src="img/1.png" alt="Projeto 1" loading="lazy" />
-    <a href="https://gustavo-machado264.github.io/site_god-of-wae/" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver site</a>
+      <!-- Item 2 - Média fidelidade -->
+      <div class="prototipo-item-direita">
+        <img src="img/media.png" alt="Protótipo média fidelidade" loading="lazy" />
+        <div class="descricao">
+          <p><strong>Média:</strong> protótipos com fluxos definidos.</p>
+        </div>
+      </div>
 
-    <img src="img/2.png" alt="Projeto 2" loading="lazy" />
-    <a href="https://gustavo-machado264.github.io/G-Force-Autos/" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver site</a>
+      <!-- Item 3 - Alta fidelidade -->
+      <div class="prototipo-item-central">
+        <img src="img/alta.png" alt="Protótipo alta fidelidade" loading="lazy" />
+        <div class="descricao">
+          <p><strong>Alta:</strong> projeto quase final, pronto para apresentar.</p>
+        </div>
+      </div>
 
-    <img src="img/3.png" alt="Projeto 3" loading="lazy" />
-    <a href="https://gustavo-machado264.github.io/Gustavo-Machado-Desenvolvedor-Web/" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver site</a>
+    </div>
+  </div>
+</section>
 
-    <img src="img/4.png" alt="Projeto 4" loading="lazy" />
-    <a href="https://gustavo-machado264.github.io/Sabores-da-Terra/" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver site</a>
+   <!-- Projetos Figma -->
+<section class="secao figma" id="projetos">
+  <div class="card-secao">
+    <h2>Projetos Figma Desenvolvidos</h2>
 
-    <img src="img/5.png" alt="Projeto 5" loading="lazy" />
-    <a href="https://gustavo-machado264.github.io/sistema-solar/" class="botao" target="_blank"
-      rel="noopener noreferrer">Ver site</a>
-  </section>
+    <!-- Primeira fila -->
+    <div class="projeto-fila">
+      <div class="projeto-item" style="--delay: 1;">
+        <img src="img/f1.png" alt="Projeto Figma 1" loading="lazy" />
+        <a href="#" class="botao">Ver Projeto</a>
+      </div>
 
+      <div class="projeto-item" style="--delay: 2;">
+        <img src="img/f2.png" alt="Projeto Figma 2" loading="lazy" />
+        <a href="#" class="botao">Ver Projeto</a>
+      </div>
+    </div>
 
-  <footer>
-    <p>© 2025 Gustavo Machado • Desenvolvedor em formação • SENAI Morvan Figueiredo</p>
-  </footer>
+    <!-- Segunda fila -->
+    <div class="projeto-fila">
+      <div class="projeto-item" style="--delay: 3;">
+        <img src="img/f3.png" alt="Projeto Figma 3" loading="lazy" />
+        <a href="#" class="botao">Ver Projeto</a>
+      </div>
 
+      <div class="projeto-item" style="--delay: 4;">
+        <img src="img/f4.png" alt="Projeto Figma 4" loading="lazy" />
+        <a href="#" class="botao">Ver Projeto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Primeiros Sites -->
+    <section class="secao programa" id="programa">
+      <div class="card-secao">
+        <h2>HTML e CSS — O Início na Programação</h2>
+        <p>
+          De 9 de abril a 30 de maio, mergulhei no HTML e CSS. Aprendi a criar páginas modernas com Flexbox, Grid e design responsivo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sites Desenvolvidos -->
+<section class="secao projeto" id="sites">
+  <div class="card-secao">
+    <h2>Sites Desenvolvidos durante o Curso</h2>
+
+    <!-- Primeira fila -->
+    <div class="projeto-fila">
+      <div class="projeto-item" style="--delay: 1;">
+        <img src="img/1.png" alt="Projeto 1" loading="lazy" />
+        <a href="#" class="botao">Ver site</a>
+      </div>
+
+      <div class="projeto-item" style="--delay: 2;">
+        <img src="img/2.png" alt="Projeto 2" loading="lazy" />
+        <a href="#" class="botao">Ver site</a>
+      </div>
+    </div>
+
+    <!-- Segunda fila -->
+    <div class="projeto-fila">
+      <div class="projeto-item" style="--delay: 3;">
+        <img src="img/3.png" alt="Projeto 3" loading="lazy" />
+        <a href="#" class="botao">Ver site</a>
+      </div>
+
+      <div class="projeto-item" style="--delay: 4;">
+        <img src="img/4.png" alt="Projeto 4" loading="lazy" />
+        <a href="#" class="botao">Ver site</a>
+      </div>
+    </div>
+
+    <!-- Terceira fila (opcional) -->
+    <div class="projeto-fila">
+      <div class="projeto-item" style="--delay: 5;">
+        <img src="img/5.png" alt="Projeto 5" loading="lazy" />
+        <a href="#" class="botao">Ver site</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+   <footer class="rodape secao" id="contato">
+  <p class="logo-footer">Gustavo Machado</p>
+  <p>Desenvolvedor em formação • SENAI Morvan Figueiredo</p>
+
+  <!-- Ícones sociais (opcional) -->
+  <div class="social-icons">
+    <a href="#" aria-label="LinkedIn">🔗</a>
+    <a href="#" aria-label="GitHub">💻</a>
+    <a href="#" aria-label="Email">✉️</a>
+  </div>
+</footer><footer class="rodape secao" id="contato">
+  <p class="logo-footer">Gustavo Machado</p>
+  <p>Desenvolvedor em formação • SENAI Morvan Figueiredo</p>
+
+</main>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
   <script src="puxado.js"></script>
   <script src="numeros.js"></script>
 
 </body>
-
 </html>

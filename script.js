@@ -1,3 +1,4 @@
+// Animação de entrada ao rolar até a seção
 const projetos = document.querySelectorAll('.projeto-item');
 
 const observer = new IntersectionObserver(entries => {
