@@ -27,6 +27,23 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
+
+
+/* ======================= */
+/* === Fundo Animado === */
+/* ======================= */
+
+#binarioCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* Permite interação com elementos acima */
+}
+
 /* ================== */
 /* === Cabeçalho ==== */
 /* ================== */
@@ -45,6 +62,12 @@ header.cabecalho {
   align-items: center;
   border-bottom: 2px solid transparent;
   transition: border-color 0.4s ease-in-out;
+}
+
+.cabecalho {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
 }
 
 header.cabecalho:hover {
@@ -135,23 +158,19 @@ html {
 
 .container-scroll {
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 100vh;
   width: 100%;
-  position: relative;
-  z-index: 1;
 }
 
 .secao {
   scroll-snap-align: start;
   min-height: 100vh;
-  padding: 6rem 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--cor-terciaria);
-  position: relative;
-  z-index: 1;
+  position: sticky;
 }
 
 /* ======================= */
@@ -169,20 +188,6 @@ html {
   overflow: hidden;
   padding-top: 10rem;
   z-index: 1;
-}
-
-#binarioCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: linear-gradient(180deg, transparent 75%, rgba(0, 255, 247, 0.05) 100%),
-    repeating-linear-gradient(to bottom, var(--cor-fundo), var(--cor-fundo) 20px, var(--cor-secundaria) 20px, var(--cor-secundaria) 40px),
-    repeating-linear-gradient(to right, var(--cor-fundo), var(--cor-fundo) 1px, #00FFF722 1px, #00FFF722 2px);
-  background-size: 100% 2px;
-  animation: binary-scroll 10s linear infinite;
 }
 
 @keyframes binary-scroll {
@@ -261,35 +266,60 @@ html {
   border-radius: 50%;
   box-shadow: 0 0 20px var(--cor-primaria);
   border: 3px solid var(--cor-primaria);
+
+  /* Animação de escala */
+  opacity: 0;
+  transform: scale(0.8);
+  animation: fadeInScale 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .texto {
   flex: 1;
   max-width: 700px;
+  position: relative;
 }
 
 .texto h2 {
   font-size: 3rem;
   color: var(--cor-primaria);
   margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  color: var(--cor-primaria);
+  font-weight: bold;
+  text-align: left;
 }
 
 .texto span {
   color: var(--cor-detalhe);
   font-size: 1.6rem;
   display: block;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 .texto p {
   font-size: 1.8rem;
   line-height: 1.6;
   text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.5s;
 }
 
-.destaque {
-  color: var(--cor-detalhe);
-  font-weight: bold;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ======================= */
@@ -410,106 +440,70 @@ html {
 }
 
 /* ======================= */
-/* === Seção: Conhecendo Computadores (Imagens maiores) === */
+/* === Seção: Conhecendo Computadores (Imagens Lado a Lado) === */
 /* ======================= */
-
-.computadores {
-  background-color: var(--cor-terciaria);
-  padding: 6rem 2rem;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Fundo animado - opcional */
-.computadores::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  background-image: linear-gradient(rgba(0, 255, 247, 0.03) 2px, transparent 2px),
-                    linear-gradient(90deg, rgba(0, 255, 247, 0.03) 2px, transparent 2px);
-  background-size: 20px 20px;
-  animation: binary-grid-scroll 10s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes binary-grid-scroll {
-  0% { background-position: 0 0; }
-  100% { background-position: 20px 20px; }
-}
-
-.card-secao {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  transition: opacity 0.5s ease;
-}
-
-.card-secao h2 {
-  font-size: 3rem;
-  color: var(--cor-primaria);
-  margin-bottom: 2rem;
-  border-left: 5px solid var(--cor-detalhe);
-  padding-left: 1rem;
-  text-align: left;
-}
-
-.card-secao p {
-  font-size: 1.8rem;
-  line-height: 1.7;
-  margin-bottom: 3rem;
-  color: var(--texto-principal);
-  text-align: left;
-  max-width: 900px;
-  margin: 0 0 3rem 0;
-}
 
 .imagens-com-botoes {
   display: flex;
-  justify-content: flex-start;
-  gap: 4rem;
+  justify-content: space-between;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 1;
+  margin-top: 2rem;
 }
 
 .imagem-botao {
+  flex: 1;
+  min-width: 300px;
+  max-width: 45%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: calc(50% - 2rem); /* Cada bloco ocupa metade da tela */
-  min-width: 400px;
-  position: relative;
-  z-index: 1;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.imagem-botao:nth-child(1) {
+  animation-delay: 1s;
+}
+.imagem-botao:nth-child(2) {
+  animation-delay: 1.2s;
 }
 
 .imagem-botao img {
   width: 100%;
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 0 15px var(--cor-primaria);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 1rem;
-  z-index: 1;
+  object-fit: cover;
 }
 
 .imagem-botao img:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 0 20px var(--cor-detalhe);
 }
 
 .imagem-botao .botao {
-  font-size: 1.6rem;
   margin-top: 1rem;
-  align-self: flex-start;
+  align-self: center;
+  font-size: 1.6rem;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--cor-primaria);
+}
+
+.imagem-botao .botao:hover {
+  background-color: var(--cor-detalhe);
+  box-shadow: 0 0 15px var(--cor-detalhe);
+  transform: translateY(-3px);
 }
 
 /* ======================= */
@@ -845,24 +839,25 @@ html {
   width: 100%;
 }
 
-/* Container das imagens */
+/* Container principal das imagens */
 .design .imagens-design {
   display: flex;
   flex-direction: column;
-  gap: 9rem;
+  gap: 6rem;
   width: 100%;
   margin-top: 2rem;
 }
 
-/* Primeiro item: imagem à esquerda, texto à direita */
-.design-item:nth-child(1) {
+/* Primeiro item - Imagem à esquerda, texto à direita */
+.design-item-esquerda {
   display: flex;
   align-items: flex-start;
   gap: 4rem;
   justify-content: space-between;
+  width: 100%;
 }
 
-.design-item:nth-child(1) img {
+.design-item-esquerda img {
   width: 350px;
   height: auto;
   object-fit: contain;
@@ -872,27 +867,28 @@ html {
   flex-shrink: 0;
 }
 
-.design-item:nth-child(1) img:hover {
+.design-item-esquerda img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px var(--cor-detalhe);
 }
 
-.design-item:nth-child(1) .conteudo-texto {
+.design-item-esquerda .conteudo-texto {
   flex: 1;
   max-width: 600px;
   padding-left: 1rem;
 }
 
-/* Segundo item: imagem à direita, texto à esquerda */
-.design-item:nth-child(2) {
+/* Segundo item - Imagem à direita, texto à esquerda */
+.design-item-direita {
   display: flex;
   align-items: flex-start;
   gap: 4rem;
   justify-content: space-between;
   flex-direction: row-reverse;
+  width: 100%;
 }
 
-.design-item:nth-child(2) img {
+.design-item-direita img {
   width: 350px;
   height: auto;
   object-fit: contain;
@@ -902,12 +898,12 @@ html {
   flex-shrink: 0;
 }
 
-.design-item:nth-child(2) img:hover {
+.design-item-direita img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px var(--cor-detalhe);
 }
 
-.design-item:nth-child(2) .conteudo-texto {
+.design-item-direita .conteudo-texto {
   flex: 1;
   max-width: 600px;
   padding-right: 1rem;
@@ -924,29 +920,28 @@ html {
   justify-content: center;
 }
 
-.card-secao {
+.card-secao-prototipo {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
 }
 
-.card-secao h2 {
+.card-secao-prototipo h2 {
   font-size: 3rem;
   color: var(--cor-primaria);
   margin-bottom: 0;
   border-left: 5px solid var(--cor-detalhe);
   padding-left: 1rem;
   text-align: left;
-  align-self: flex-start;
   position: relative;
   z-index: 1;
 }
 
-.card-secao h2::after {
+.card-secao-prototipo h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -963,7 +958,7 @@ html {
   50% { transform: translateX(100%); }
 }
 
-.card-secao p {
+.card-secao-prototipo p {
   font-size: 1.8rem;
   line-height: 1.7;
   margin: 0;
@@ -992,7 +987,7 @@ html {
 }
 
 .prototipo-item-esquerda img {
-  width: 400px;
+  width: 350px;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -1022,7 +1017,7 @@ html {
 }
 
 .prototipo-item-direita img {
-  width: 500px;
+  width: 350px;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -1052,7 +1047,7 @@ html {
 }
 
 .prototipo-item-central img {
-  width: 600px;
+  width: 400px;
   height: auto;
   object-fit: contain;
   border-radius: 12px;
@@ -1067,7 +1062,7 @@ html {
 
 .prototipo-item-central .descricao {
   margin-top: 1rem;
-  max-width: none;
+  max-width: 600px;
 }
 
 /* ======================= */
@@ -1118,46 +1113,34 @@ html {
   50% { transform: translateX(100%); }
 }
 
-.card-secao p {
-  font-size: 1.8rem;
-  line-height: 1.7;
-  margin-bottom: 4rem;
-  color: var(--texto-principal);
-  text-align: left;
-  max-width: 900px;
-  width: 100%;
-}
-
-/* Container das imagens em fileiras (duas por linha) */
+/* Container das filas de projetos */
 .figma .projeto-fila {
   display: flex;
   gap: 4rem;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 /* Cada projeto individual */
 .figma .projeto-item {
-  width: calc(50% - 2rem); /* Duas por linha */
+  width: calc(50% - 2rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
   opacity: 0;
   transform: translateY(40px);
   animation: aparecer 0.8s forwards;
-  animation-play-state: paused; /* Inicia pausada */
+  animation-play-state: paused;
   animation-delay: calc(var(--delay) * 0.2s);
 }
 
-/* Ativa a animação quando o elemento estiver visível */
 .figma .projeto-item.ativo {
   animation-play-state: running;
 }
 
-/* Animação de surgimento do canto inferior */
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -1174,7 +1157,7 @@ html {
 /* Estilização das imagens */
 .figma .projeto-item img {
   width: 100%;
-  max-width: 100%;
+  max-width: 600px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 15px var(--cor-primaria);
@@ -1190,6 +1173,29 @@ html {
 .figma .projeto-item .botao {
   margin-top: 1rem;
   align-self: flex-start;
+}
+
+/* Estilização do título com link */
+.figma h2 {
+  font-size: 3rem;
+  color: var(--texto-principal);
+  text-align: left;
+  position: relative;
+  z-index: 1;
+}
+
+.figma h2 a {
+  color: var(--cor-detalhe); /* Cor neon para o link */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.figma h2 a:hover {
+  color: var(--cor-primaria); /* Troca de cor no hover */
+  transform: scale(1.05);
 }
 
 /* ======================= */
@@ -1365,7 +1371,7 @@ html {
 /* === Rodapé ==== */
 /* ====================== */
 
-footer {
+.rodape {
   background-color: var(--cor-secundaria);
   padding: 3rem 2rem;
   text-align: center;
@@ -1375,7 +1381,7 @@ footer {
   z-index: 1;
 }
 
-footer::before {
+.rodape::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1392,7 +1398,15 @@ footer::before {
   50% { transform: translateX(100%); }
 }
 
-footer p {
+.rodape-conteudo {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rodape p {
   margin: 0;
   font-size: 1.3rem;
   color: #888;
@@ -1401,7 +1415,7 @@ footer p {
   z-index: 1;
 }
 
-footer .logo-footer {
+.rodape .logo-footer {
   font-family: var(--fonte-titulo);
   font-size: 1.6rem;
   color: var(--cor-primaria);
@@ -1409,26 +1423,29 @@ footer .logo-footer {
   letter-spacing: 1px;
   display: block;
   margin-bottom: 0.5rem;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
 
-footer .social-icons {
+.rodape .social-icons {
   margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
   z-index: 1;
   position: relative;
 }
 
-footer .social-icons a {
-  margin: 0 1rem;
+.rodape .social-icons a {
   display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
   color: var(--cor-primaria);
   font-size: 1.8rem;
   text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-footer .social-icons a:hover {
+.rodape .social-icons a:hover {
   color: var(--cor-detalhe);
   transform: scale(1.2) translateY(-3px);
 }
